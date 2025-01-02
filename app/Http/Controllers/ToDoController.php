@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ToDo\StoreRequest;
 use App\Http\Requests\ToDo\UpdateRequest;
 use App\Models\ToDo;
-use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 
 class ToDoController extends Controller
@@ -19,10 +18,9 @@ class ToDoController extends Controller
     {
         // ToDoを取得する
         $toDos = ToDo::get();
-        
+
         // 取得したToDoを返却する
         return $toDos;
-
     }
 
     /**
@@ -45,9 +43,9 @@ class ToDoController extends Controller
     {
         // 新規のToDoモデルを作成する
         $toDo = new ToDo();
-       
+
         // タイトルをToDoモデルに設定する
-        $toDo ->title = $request->get('title');
+        $toDo->title = $request->get('title');
 
         // DBにデータを登録する
         $toDo->save();
@@ -88,8 +86,8 @@ class ToDoController extends Controller
         $toDo = ToDo::find($id);
 
         // タイトルをToDoモデルに設定する
-        $toDo ->title = $request->get('title');
-        
+        $toDo->title = $request->get('title');
+
         // ToDoデータベースを更新する
         $toDo->save();
     }

@@ -22,7 +22,6 @@ class ToDoFactory extends Factory
     public function definition()
     {
         return [
-            //
             'title' => $this->faker->name()
         ];
     }

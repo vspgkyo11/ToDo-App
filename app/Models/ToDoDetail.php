@@ -13,5 +13,4 @@ class ToDoDetail extends Model
     {
         return $this->belongsTo(ToDo::class);
     }
-
 }

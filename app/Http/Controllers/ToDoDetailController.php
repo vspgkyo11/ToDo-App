@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ToDo\UpdateRequest;
 use App\Http\Requests\ToDoDetail\StoreRequest;
+use App\Http\Requests\ToDoDetail\UpdateRequest;
 use App\Models\ToDoDetail;
-use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 
 class ToDoDetailController extends Controller
@@ -38,17 +37,16 @@ class ToDoDetailController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        // 新規のToDoDetailモデルを作成する
-        $toDoDetail = new ToDoDetail();
-       
-        // ToDoDetailモデルに値を設定する
-        $toDoDetail->to_do_id = $request->get('to_do_id');
-        $toDoDetail->name = $request->get('name');
-        $toDoDetail->completed_flag = false;       
+         // 新規のToDoDetailモデルを作成する
+         $toDoDetail = new ToDoDetail();
 
-        // DBにデータを登録する
-        $toDoDetail->save();
-
+         // ToDoDetailに値を設定する
+         $toDoDetail->to_do_id = $request->get('to_do_id');
+         $toDoDetail->name = $request->get('name');
+         $toDoDetail->completed_flag = false;
+ 
+         // DBにデータを登録する
+         $toDoDetail->save();
     }
 
     /**
@@ -85,12 +83,11 @@ class ToDoDetailController extends Controller
         // IDに紐づくToDoDetailモデルを取得する
         $toDoDetail = ToDoDetail::find($id);
 
-        // nameをToDoDetailモデルに設定する
-        $toDoDetail ->name = $request->get('name');
-        
+        // ネームをToDoDetailモデルに設定する
+        $toDoDetail->name = $request->get('name');
+     
         // ToDoDetailテーブルを更新する
         $toDoDetail->save();
-
     }
 
     /**
@@ -101,11 +98,10 @@ class ToDoDetailController extends Controller
      */
     public function destroy($id)
     {
-        // IDに紐づくToDoモデルを取得する
-        $toDoDetail = ToDoDetail::find($id);
+         // IDに紐づくToDoDetailモデルを取得する
+         $toDoDetail = ToDoDetail::find($id);
 
-        // ToDoデータベースから対象のレコードを削除する
-        $toDoDetail->delete();
-
+         // ToDoDetailテーブルから対象のレコードを削除する
+         $toDoDetail->delete();
     }
 }
