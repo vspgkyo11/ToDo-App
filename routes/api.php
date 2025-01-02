@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ToDoController;
+use App\Http\Controllers\ToDoDetailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route ::get('todos', [ToDoController::class, 'index']);
+//Route ::get('todos', [ToDoController::class, 'index']);
+
+Route::resource('todos', ToDoController::class);
+Route::resource('todoDetails', ToDoDetailController::class);
