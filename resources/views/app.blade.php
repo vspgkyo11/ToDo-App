@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 	<meta charset="UTF-8">
 	<title>Welcome to Laravel8 + React.js!</title>
