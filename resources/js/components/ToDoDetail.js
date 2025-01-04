@@ -12,7 +12,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 function ToDoDetail(props) {
     return (
         <ListItem
-            key={props.id}
+            key={props.detail.id}
             secondaryAction={
                 <IconButton edge="end" aria-label="comments">
                     <DeleteIcon />
@@ -24,7 +24,7 @@ function ToDoDetail(props) {
                 <ListItemIcon>
                     <Checkbox edge="start" />
                 </ListItemIcon>
-                <ListItemText primary={"TEST ToDoDetail" + props.id } />
+                <ListItemText primary={props.detail.name } />
             </ListItemButton>
         </ListItem>
     );

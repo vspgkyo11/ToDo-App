@@ -1,8 +1,16 @@
-import { useQueryClient } from "react-query"
+import { useQuery } from "react-query";
+import axios from "axios";
+
+const getToDoList = async () => {
+    const { data } = await axios.get("/api/toDos");
+    return data;
+};
 
 const useCurrentToDoList = () => {
-    const queryClient = useQueryClient();
-    return queryClient.getQueryData("toDoList");
-}
+    return useQuery("toDoList", getToDoList, {
+        staleTime: 5000,
+        refetchOnWindowFocus: false
+    });
+};
 
 export default useCurrentToDoList;
