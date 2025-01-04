@@ -7,19 +7,18 @@ import { Grid } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Example from "../pages/Example";
 import Home from "../pages/Home";
-//import { Routes } from "react-router-dom/dist";
-
 
 function Main() {
     return (
-        <Box><Navigation></Navigation>
+        <Box>
+            <Navigation></Navigation>
             <Router>
-            <main className={"m-5"}>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                </Routes>
-            </main>
-        </Router>
+                <main className={"m-5"}>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                    </Routes>
+                </main>
+            </Router>
         </Box>
     );
 }

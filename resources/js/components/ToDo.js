@@ -1,14 +1,24 @@
-import { Card, CardContent, CartHeader, List } from "@mui/material"
-import React from "react"
-function ToDo(){
-    return(
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    List,
+    ListItem,
+    ListItemText,
+} from "@mui/material";
+import React from "react";
+import ToDoDetail from "./ToDoDetail";
+
+function ToDo() {
+    return (
         <Card>
             <CardHeader title="Test ToDo" />
+
             <CardContent>
-            <List>
+                <List>
                     {[0, 1, 2, 3].map((value) => (
                         <ListItem key={value}>
-                            <p>{value}</p>
+                            <ToDoDetail id={value} />
                         </ListItem>
                     ))}
                 </List>
